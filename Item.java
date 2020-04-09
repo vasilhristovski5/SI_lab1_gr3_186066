@@ -1,3 +1,4 @@
+import java.util.List;
 class Item {
 	int id;
 	String name;
@@ -49,4 +50,20 @@ class Item {
                 return 0.0;
             }
 	}
+}
+class Receipt{
+    List<Item> items;
+    public void addItem(Item item){
+        items.add(item);
+    }
+    public void removeItem(Item item){
+        items.remove(item);
+    }
+    public int vkupenIznosFiskalna(){
+        int sum=0;
+        for(int i=0;i<items.size();i++){
+            sum+= items.get(i).getPrice();
+        }
+        return sum;
+    }
 }
